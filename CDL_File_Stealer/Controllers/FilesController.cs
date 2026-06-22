@@ -50,11 +50,12 @@ namespace CDL_File_Stealer.Controllers
 
             if (_fileStore.Exists(relativePath) && !overwrite)
             {
-                return Conflict("THERE IS A FILE WITH THE SAME NAME");
+                return Conflict("THERE IS A FILE WITH THE SAME NAME!");
             }
             if (_fileStore.Exists(relativePath) && overwrite)
             {
-                return Conflict("WE ARE ABOUT THE REPLACE THE FILE. THERE IS NO TAKEBACK");
+                await _fileStore.SaveAsync(relativePath, file);
+                return Ok("YOUR FILE HAS BEEN REPLACED, THERE IS NO TAKEBACK!");
             }
 
 
