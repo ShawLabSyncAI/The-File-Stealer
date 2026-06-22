@@ -1,0 +1,16 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+*.user
+
+# Other IDEs
+.idea/
+.vscode/
+
+# Local / machine-specific config — uncomment if you move the real BaseFolder
+# path or any secrets out of the committed appsettings.json
+# appsettings.Development.json
+# appsettings.*.local.json
